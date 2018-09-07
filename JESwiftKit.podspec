@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JESwiftKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JESwiftKit.'
+  s.summary          = 'A collection of extra tools.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,26 +17,44 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'A collection of extensions and useful views'
 
   s.homepage         = 'https://github.com/joeboyscout04/JESwiftKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'joeboyscout04' => 'joseph.elliott@daresay.co' }
   s.source           = { :git => 'https://github.com/joeboyscout04/JESwiftKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'JESwiftKit/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'JESwiftKit' => ['JESwiftKit/Assets/*.png']
-  # }
+  s.ios.deployment_target = '9.0'
+  s.source_files = 'JESwiftKit/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'Views' do |cs|
+      cs.source_files = 'Classes/Views'
+      cs.dependency 'JESwiftKit/Core'
+      cs.dependency 'SwifterSwift'
+  end
+
+  s.subspec 'Rx' do |cs|
+      cs.source_files = 'Classes/Rx'
+      cs.dependency 'JESwiftKit/Core'
+      cs.dependency 'RxSwift'
+      cs.dependency 'RxCocoa'
+  end
+
+  s.subspec 'Lottie' do |cs|
+      cs.source_files = 'Classes/Lottie'
+      cs.dependency 'lottie-ios'
+      cs.dependency 'SwifterSwift'
+  end
+
+  s.subspec 'Logger' do |cs|
+      cs.source_files = 'Classes/Lumberjack'
+      cs.dependency 'CocoaLumberjack/Swift'
+  end
+
+  s.subspec 'Core' do |cs|
+      cs.source_files = 'Classes/Core'
+  end
+
+  s.frameworks = 'UIKit'# plus other frameworks you use
+
 end

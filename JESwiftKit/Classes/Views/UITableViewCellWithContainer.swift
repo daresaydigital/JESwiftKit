@@ -1,0 +1,50 @@
+//
+//  UITableViewCellWithContainer.swift
+//  TeliaZone
+//
+//  Created by Joseph Elliott on 2018-03-19.
+//  Copyright © 2018 Telia Zone. All rights reserved.
+//
+
+import Foundation
+import UIKit
+import SwifterSwift
+
+class UITableViewCellWithContainer: UITableViewCell {
+    
+    var embeddedController: UIViewController?
+    @IBOutlet weak var containerView: UIView?
+    
+    override func prepareForReuse() {
+        if let controller = self.embeddedController {
+            controller.willMove(toParentViewController: nil)
+            controller.view.removeFromSuperview()
+            controller.removeFromParentViewController()
+        }
+    }
+    
+    /// Initialize a UITableViewCell with an embedded view controller and a reference to its parent.
+    func configureCell(embeddedController: UIViewController, parentViewController: UIViewController) {
+        
+        // we're going to replace whatever's in the cell with our own stuff
+        self.containerView?.removeSubviews()
+        
+        //for some reason this isn't getting initialized properly...
+        if let containerView = self.containerView {
+            self.frame = CGRect(x: containerView.frame.origin.x, y: containerView.frame.origin.y, width: parentViewController.view.frame.size.width, height: containerView.frame.origin.y)
+        }
+        //set the new embedded controller.
+        self.embeddedController = embeddedController
+        
+        // Add the page view controller into the container view.
+        parentViewController.addChildViewController(embeddedController)
+        
+        self.embeddedController?.view.translatesAutoresizingMaskIntoConstraints = false
+        self.containerView?.translatesAutoresizingMaskIntoConstraints = false
+        self.containerView?.addSubview(embeddedController.view)
+        embeddedController.view.fillToSuperview()
+        
+        self.embeddedController?.didMove(toParentViewController: parentViewController)
+
+    }
+}

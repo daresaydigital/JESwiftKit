@@ -1,0 +1,77 @@
+{
+  "name": "JESwiftKit",
+  "version": "0.1.0",
+  "summary": "A collection of extra tools.",
+  "description": "A collection of extensions and useful views",
+  "homepage": "https://github.com/joeboyscout04/JESwiftKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "joeboyscout04": "joseph.elliott@daresay.co"
+  },
+  "source": {
+    "git": "https://github.com/joeboyscout04/JESwiftKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "JESwiftKit/Classes/**/*",
+  "frameworks": "UIKit",
+  "subspecs": [
+    {
+      "name": "Views",
+      "source_files": "Classes/Views",
+      "dependencies": {
+        "JESwiftKit/Core": [
+
+        ],
+        "SwifterSwift": [
+
+        ]
+      }
+    },
+    {
+      "name": "Rx",
+      "source_files": "Classes/Rx",
+      "dependencies": {
+        "JESwiftKit/Core": [
+
+        ],
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ]
+      }
+    },
+    {
+      "name": "Lottie",
+      "source_files": "Classes/Lottie",
+      "dependencies": {
+        "lottie-ios": [
+
+        ],
+        "SwifterSwift": [
+
+        ]
+      }
+    },
+    {
+      "name": "Logger",
+      "source_files": "Classes/Lumberjack",
+      "dependencies": {
+        "CocoaLumberjack/Swift": [
+
+        ]
+      }
+    },
+    {
+      "name": "Core",
+      "source_files": "Classes/Core"
+    }
+  ]
+}

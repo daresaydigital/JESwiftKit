@@ -42,11 +42,11 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8B7257BB21DDD0895DDBAE5C /* Pods_JESwiftKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JESwiftKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D59F7070153606E6F2876B2 /* Pods-JESwiftKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JESwiftKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JESwiftKit_Example/Pods-JESwiftKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A78670E4FB30FE913DC53F90 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A78670E4FB30FE913DC53F90 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C1AE2B5DAA6A4EEE0227C90E /* Pods-JESwiftKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JESwiftKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JESwiftKit_Tests/Pods-JESwiftKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C57B00A34D19DC881FF46516 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C57B00A34D19DC881FF46516 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EF3FC4B2D374E7E5E065A9FD /* Pods-JESwiftKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JESwiftKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JESwiftKit_Example/Pods-JESwiftKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F9BBA542F17BDC2AE8B86F86 /* JESwiftKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = JESwiftKit.podspec; path = ../JESwiftKit.podspec; sourceTree = "<group>"; };
+		F9BBA542F17BDC2AE8B86F86 /* JESwiftKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JESwiftKit.podspec; path = ../JESwiftKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,11 +269,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JESwiftKit_Example/Pods-JESwiftKit_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/JESwiftKit/JESwiftKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JESwiftKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -490,6 +500,7 @@
 			baseConfigurationReference = 8D59F7070153606E6F2876B2 /* Pods-JESwiftKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JESwiftKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -505,6 +516,7 @@
 			baseConfigurationReference = EF3FC4B2D374E7E5E065A9FD /* Pods-JESwiftKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JESwiftKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
