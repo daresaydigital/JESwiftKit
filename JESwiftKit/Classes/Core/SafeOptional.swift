@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SafeOptional {
+public class SafeOptional {
     
     /// Takes an implicitly unwrapped optional and returns a wrapped optional
     public static func makeSafe<T>(_ unwrapped: T!) -> T? {
