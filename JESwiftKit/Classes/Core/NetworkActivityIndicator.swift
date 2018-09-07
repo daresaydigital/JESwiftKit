@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-var networkActivityCount = 0
+private var networkActivityCount = 0
 
 extension UIApplication {
     public func showNetworkActivityIndicator() {

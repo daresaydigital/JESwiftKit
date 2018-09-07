@@ -37,4 +37,14 @@ extension Optional {
             return []
         }
     }
+    
+    /// Takes an implicitly unwrapped optional and returns a wrapped optional
+    public static func safe<T>(_ unwrapped: T!) -> T? {
+        
+        if let proof = unwrapped {
+            return proof
+        } else {
+            return nil
+        }
+    }
 }
