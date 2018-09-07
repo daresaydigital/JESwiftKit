@@ -26,16 +26,20 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = '9.0'
   s.source_files = 'JESwiftKit/Classes/**/*'
-
+  s.default_subspec = 'Core', 'Views'
+  s.frameworks = 'UIKit'
+  
+  s.subspec 'Core' do |cs|
+      cs.source_files = 'Classes/Core'
+  end
+  
   s.subspec 'Views' do |cs|
       cs.source_files = 'Classes/Views'
-      cs.dependency 'JESwiftKit/Core'
       cs.dependency 'SwifterSwift'
   end
 
   s.subspec 'Rx' do |cs|
       cs.source_files = 'Classes/Rx'
-      cs.dependency 'JESwiftKit/Core'
       cs.dependency 'RxSwift'
       cs.dependency 'RxCocoa'
   end
@@ -50,11 +54,4 @@ Pod::Spec.new do |s|
       cs.source_files = 'Classes/Lumberjack'
       cs.dependency 'CocoaLumberjack/Swift'
   end
-
-  s.subspec 'Core' do |cs|
-      cs.source_files = 'Classes/Core'
-  end
-
-  s.frameworks = 'UIKit'# plus other frameworks you use
-
 end
