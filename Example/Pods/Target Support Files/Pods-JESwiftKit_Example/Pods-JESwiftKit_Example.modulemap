@@ -1,6 +1,0 @@
-framework module Pods_JESwiftKit_Example {
-  umbrella header "Pods-JESwiftKit_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

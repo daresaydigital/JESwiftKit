@@ -1,6 +1,0 @@
-framework module JESwiftKit {
-  umbrella header "JESwiftKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
