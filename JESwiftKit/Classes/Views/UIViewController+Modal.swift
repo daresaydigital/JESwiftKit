@@ -13,7 +13,7 @@ extension UIViewController {
     
     /// Determine if a view controller has been presented modally or not.
     /// http://stackoverflow.com/a/33136632 and http://stackoverflow.com/a/16764496
-    var isModallyPresented: Bool {
+    public var isModallyPresented: Bool {
         
         if self.presentingViewController?.presentedViewController == self {
             return true

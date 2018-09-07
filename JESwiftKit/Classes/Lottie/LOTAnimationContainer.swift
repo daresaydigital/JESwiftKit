@@ -12,7 +12,7 @@ import Lottie
 import SwifterSwift
 
 /// A wrapper around a LOTAnimationView for more convenient access via storyboard
-class LOTAnimationContainer: UIView {
+public class LOTAnimationContainer: UIView {
     
     private var initialLayout = false
     public private(set) var lottieView: LOTAnimationView?
@@ -54,7 +54,7 @@ class LOTAnimationContainer: UIView {
     /// play the animation oncpoisible
     @IBInspectable public var autoplay: Bool = false 
     
-    override func didMoveToWindow() {
+    override public func didMoveToWindow() {
         super.didMoveToWindow()
         if self.window != nil {
             if !initialLayout && autoplay {
@@ -66,7 +66,7 @@ class LOTAnimationContainer: UIView {
         }
     }
     
-    @objc func resumePlay() {
+    @objc public func resumePlay() {
         if let animView = self.lottieView {
             if !animView.isAnimationPlaying {
                 animView.play()
@@ -78,7 +78,7 @@ class LOTAnimationContainer: UIView {
 extension LOTAnimationView {
     
     /// Allow animation to complete cycle before stopping
-    func stopEventually() {
+    public func stopEventually() {
         self.loopAnimation = false
         
         self.completionBlock = { (completed) in

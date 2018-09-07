@@ -12,7 +12,7 @@ import UIKit
 extension UIViewController {
     
     /// Handle in general presentation of UIActionSheet and UIActivityViewController on iPad
-    func handlePopoverPresentation(_ sender: Any) {
+    public func handlePopoverPresentation(_ sender: Any) {
         
         if let popover = self.popoverPresentationController {
             var sendView: UIView?

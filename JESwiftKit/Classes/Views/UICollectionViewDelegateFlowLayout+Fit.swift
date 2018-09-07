@@ -12,7 +12,7 @@ import UIKit
 /// Supply a minimum cell size and then fit cells to the collection view depending on the minimum
 /// For example, you could have 3 cells per row on smaller devices, but more on larger devices.
 /// Will attempt to fill all available space without exceeding the minimum.
-protocol UICollectionViewGrowToFitFlowLayoutDelegate: UICollectionViewFitFlowLayoutDelegate {
+public protocol UICollectionViewGrowToFitFlowLayoutDelegate: UICollectionViewFitFlowLayoutDelegate {
 
     /// Minimum size of items in this collection.  They will attempt to scale to fit the available space.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumItemWidthIn section: Int) -> CGFloat
@@ -20,7 +20,7 @@ protocol UICollectionViewGrowToFitFlowLayoutDelegate: UICollectionViewFitFlowLay
 
 extension UICollectionViewGrowToFitFlowLayoutDelegate {
     
-    func cellSize(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> CGSize {
+    public func cellSize(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> CGSize {
 
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             let minimumItemWidth = self.collectionView(collectionView, layout: flowLayout, minimumItemWidthIn: section)
@@ -44,7 +44,7 @@ extension UICollectionViewGrowToFitFlowLayoutDelegate {
 }
 
 /// Fix the number of items per row, then scale cells to fit space.  Option to set maximum item width which will override cells per row.
-protocol UICollectionViewFixItemNumberLayoutDelegate: UICollectionViewFitFlowLayoutDelegate {
+public protocol UICollectionViewFixItemNumberLayoutDelegate: UICollectionViewFitFlowLayoutDelegate {
     
     /// The number of cells to include in each row. Can be overridden if maximumItemWidth is also implemented.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, cellsPerRowIn section: Int) -> Int
@@ -55,11 +55,11 @@ protocol UICollectionViewFixItemNumberLayoutDelegate: UICollectionViewFitFlowLay
 
 extension UICollectionViewFixItemNumberLayoutDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, maximumItemWidthIn section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, maximumItemWidthIn section: Int) -> CGFloat {
         return CGFloat(Int.max)
     }
 
-    func cellSize(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> CGSize {
+    public func cellSize(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> CGSize {
         
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             let maxItemWidth = self.collectionView(collectionView, layout: flowLayout, maximumItemWidthIn: section)
@@ -83,7 +83,7 @@ extension UICollectionViewFixItemNumberLayoutDelegate {
 }
 
 /// General protocol to encompass various types of cell fitting.
-protocol UICollectionViewFitFlowLayoutDelegate: class, UICollectionViewDelegateFlowLayout {
+public protocol UICollectionViewFitFlowLayoutDelegate: class, UICollectionViewDelegateFlowLayout {
     
     /// Aspect ratio of the cells in this section for scaling.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, aspectRatioIn section: Int) -> CGFloat
@@ -97,11 +97,11 @@ protocol UICollectionViewFitFlowLayoutDelegate: class, UICollectionViewDelegateF
 
 extension UICollectionViewFitFlowLayoutDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, aspectRatioIn section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, aspectRatioIn section: Int) -> CGFloat {
         return 1.0
     }
 
-    func cellsPerRow(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> Int {
+    public func cellsPerRow(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> Int {
         var numberOfCells = 0
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             let usableWidth = collectionView.frame.size.width

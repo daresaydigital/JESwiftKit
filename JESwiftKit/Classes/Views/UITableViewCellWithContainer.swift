@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 import SwifterSwift
 
-class UITableViewCellWithContainer: UITableViewCell {
+public class UITableViewCellWithContainer: UITableViewCell {
     
-    var embeddedController: UIViewController?
-    @IBOutlet weak var containerView: UIView?
+    public var embeddedController: UIViewController?
+    @IBOutlet weak public var containerView: UIView?
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         if let controller = self.embeddedController {
             controller.willMove(toParentViewController: nil)
             controller.view.removeFromSuperview()
@@ -24,7 +24,7 @@ class UITableViewCellWithContainer: UITableViewCell {
     }
     
     /// Initialize a UITableViewCell with an embedded view controller and a reference to its parent.
-    func configureCell(embeddedController: UIViewController, parentViewController: UIViewController) {
+    public func configureCell(embeddedController: UIViewController, parentViewController: UIViewController) {
         
         // we're going to replace whatever's in the cell with our own stuff
         self.containerView?.removeSubviews()

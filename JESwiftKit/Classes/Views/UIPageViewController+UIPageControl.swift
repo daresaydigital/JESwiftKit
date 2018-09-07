@@ -11,7 +11,7 @@ import UIKit
 
 extension UIPageViewController {
     
-    var pageControl: UIPageControl? {
+    public var pageControl: UIPageControl? {
         
         let subviews = self.view.subviews
         for view in subviews {

@@ -29,7 +29,7 @@ extension Optional where Wrapped: OptionalType {
 extension Optional {
     
     // Cast an optional to array of single object or empty array if not there. 
-    var toArray: [Wrapped] {
+    public var toArray: [Wrapped] {
         switch self {
         case let .some(value):
             return [value]

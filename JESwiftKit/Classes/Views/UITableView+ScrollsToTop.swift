@@ -11,7 +11,7 @@ import UIKit
 
 extension UITableView {
 
-    func scrollToTopRow() {
+    public func scrollToTopRow() {
         let zeroIndex = IndexPath(item: 0, section: 0)
         if self.numberOfSections > 0 && self.numberOfRows(inSection: zeroIndex.section) > 0 {
             self.scrollToRow(at: zeroIndex, at: .top, animated: false)

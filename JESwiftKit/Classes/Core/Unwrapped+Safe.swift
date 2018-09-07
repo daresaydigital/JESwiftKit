@@ -9,7 +9,7 @@
 import Foundation
 
 /// Takes an implicitly unwrapped optional and returns a wrapped optional
-func safe<T>(_ unwrapped: T!) -> T? {
+public func safe<T>(_ unwrapped: T!) -> T? {
     
     if let proof = unwrapped {
         return proof

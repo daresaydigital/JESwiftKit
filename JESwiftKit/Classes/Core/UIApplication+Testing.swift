@@ -12,7 +12,7 @@ import UIKit
 extension UIApplication {
     
     /// If we are running unit tests
-    var isTesting: Bool {
+    public var isTesting: Bool {
         return NSClassFromString("XCTest") != nil
     }
 }

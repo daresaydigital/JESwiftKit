@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-class CircularView: UIView {
+public class CircularView: UIView {
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         self.clipsToBounds = true
@@ -20,9 +20,9 @@ class CircularView: UIView {
 }
 
 @IBDesignable
-class CircularImageView: UIImageView {
+public class CircularImageView: UIImageView {
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         self.clipsToBounds = true

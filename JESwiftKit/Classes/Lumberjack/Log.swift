@@ -27,6 +27,6 @@ class CustomDDLogFormatter: NSObject, DDLogFormatter {
     }
 }
 
-func DDLogError(_ message: String, error: Error?) {
+public func DDLogError(_ message: String, error: Error?) {
     DDLogError(String(format: "%@ Error: %@", message, error.debugDescription))
 }

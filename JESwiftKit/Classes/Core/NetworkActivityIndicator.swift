@@ -12,7 +12,7 @@ import UIKit
 var networkActivityCount = 0
 
 extension UIApplication {
-    func showNetworkActivityIndicator() {
+    public func showNetworkActivityIndicator() {
         DispatchQueue.main.async {
             if networkActivityCount == 0 {
                 self.isNetworkActivityIndicatorVisible = true
@@ -21,7 +21,7 @@ extension UIApplication {
         }
     }
 
-    func hideNetworkActivityIndicator() {
+    public func hideNetworkActivityIndicator() {
         DispatchQueue.main.async {
             networkActivityCount -= 1
             if networkActivityCount <= 0 {

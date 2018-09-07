@@ -12,7 +12,7 @@ extension Sequence {
     
     /// Check to ensure a condition is true for all elements in sequence.
     /// true for empty sequences.
-    func forAll(where predicate: (Self.Element) throws -> Bool) rethrows -> Bool {
+    public func forAll(where predicate: (Self.Element) throws -> Bool) rethrows -> Bool {
         for item in self {
             do {
                 let result = try predicate(item)
@@ -29,7 +29,7 @@ extension Sequence {
 extension Sequence where Element: Equatable {
     
     /// Drop duplicate elements from an array while maintaining ordering.
-    func distinct() -> [Element] {
+    public func distinct() -> [Element] {
         var result = [Element]()
         
         for value in self {
@@ -40,7 +40,7 @@ extension Sequence where Element: Equatable {
         return result
     }
     
-    func distinctBy<T: Hashable>(map: ((Element) -> (T))) -> [Element] {
+    public func distinctBy<T: Hashable>(map: ((Element) -> (T))) -> [Element] {
         var set = Set<T>() //the unique list kept in a Set for fast retrieval
         var result = [Element]() //keeping the unique list of elements but ordered
         for value in self {

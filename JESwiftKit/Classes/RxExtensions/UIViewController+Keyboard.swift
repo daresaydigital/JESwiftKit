@@ -15,7 +15,7 @@ extension UIViewController {
     
     /// Initialize the adjustment of the keyboard to a particular constraint.
     /// Call this in your viewDidLoad()
-    func enableKeyboardAdjustmentFor(_ constraint: NSLayoutConstraint, disposedBy bag: DisposeBag, padding: CGFloat = 8.0) {
+    public func enableKeyboardAdjustmentFor(_ constraint: NSLayoutConstraint, disposedBy bag: DisposeBag, padding: CGFloat = 8.0) {
         
         NotificationCenter.default.rx.notification(NSNotification.Name.UIKeyboardWillChangeFrame).subscribe(onNext: { [weak self] (note) in
             if let strongSelf = self {
