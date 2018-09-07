@@ -253,6 +253,7 @@
 		5CB42F3B8FF41CFDC6D1386DBF8DD2DC /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C6A47D1076693519C05A2B0CEB61E /* QuickSelectedTestSuiteBuilder.swift */; };
 		5CBDFAE4985177D14F1492D0E498B0C3 /* StartWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329CBFCA2E9DCD712A1D32EC0239131 /* StartWith.swift */; };
 		5CCD32BBECDAF0AD2A9ED80E8E52651A /* RxCocoa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE46565809DDA42688338C543465790 /* RxCocoa-dummy.m */; };
+		5D43DCBA2143091A009C41EB /* SafeOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D43DCB92143091A009C41EB /* SafeOptional.swift */; };
 		5D96AD54CFA69002B765CE546EA8176C /* LOTPathInterpolator.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A40F3FDFC71281A042787119CDF806 /* LOTPathInterpolator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5DBCC0E4C72649C9A39A00D40D944DDA /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4E4F1EF08D1CEA7C16ECB5D41679EA4 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DE022EE3333941702A0FCEAD924A0DC /* LOTValueInterpolator.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A57BBA052BEFCFF71DCF9E42EDD06 /* LOTValueInterpolator.m */; };
@@ -1011,6 +1012,7 @@
 		5CFDEEF31CFCB2EB511EE4A327633F07 /* LOTCompositionContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTCompositionContainer.h; path = "lottie-ios/Classes/AnimatableLayers/LOTCompositionContainer.h"; sourceTree = "<group>"; };
 		5D116F111D1031395C9E4D161E224B19 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3D7E0AC0C46AA0B4D82E4B80BAE85B /* UISwitch+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISwitch+Rx.swift"; path = "RxCocoa/iOS/UISwitch+Rx.swift"; sourceTree = "<group>"; };
+		5D43DCB92143091A009C41EB /* SafeOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeOptional.swift; sourceTree = "<group>"; };
 		5E626B2D483DB35E7DB60A1F0AC82685 /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
 		5E98EED24513E0238C0075572BCAB6B1 /* UIButton+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Rx.swift"; path = "RxCocoa/iOS/UIButton+Rx.swift"; sourceTree = "<group>"; };
 		5F10E7905C045B94D877B6E6532051D4 /* CwlBadInstructionException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlBadInstructionException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlBadInstructionException.swift; sourceTree = "<group>"; };
@@ -1964,6 +1966,7 @@
 				276A59D45C4FB33EE20C464C30803D38 /* Optional+Extensions.swift */,
 				E38FF3D0F485D9D0AEB37A30BD049A5D /* SequenceExtensions.swift */,
 				4F0604C0B7C8949DE957FEC454E244E8 /* UIApplication+Testing.swift */,
+				5D43DCB92143091A009C41EB /* SafeOptional.swift */,
 			);
 			name = Core;
 			path = JESwiftKit/Classes/Core;
@@ -3211,6 +3214,7 @@
 			files = (
 				AFBA9F4643ECC94609DA0697D2B55DC9 /* CocoaLumberjack-dummy.m in Sources */,
 				48366CAA322A59033510779BB62043AF /* CocoaLumberjack.swift in Sources */,
+				5D43DCBA2143091A009C41EB /* SafeOptional.swift in Sources */,
 				8EB6C5C8DE2339BF01974967B18A8121 /* DDAbstractDatabaseLogger.m in Sources */,
 				905DCE8CAD367339E0F8E2F048BB5B27 /* DDASLLogCapture.m in Sources */,
 				53B602A01A4012746555524D935744DD /* DDASLLogger.m in Sources */,
