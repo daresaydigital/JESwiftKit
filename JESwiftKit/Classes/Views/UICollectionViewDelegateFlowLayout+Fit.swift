@@ -36,7 +36,7 @@ extension UICollectionViewGrowToFitFlowLayoutDelegate {
             
             let scaledCellHeight = scaledCellWidth / aspectRatio
             
-            return CGSize(width: scaledCellWidth, height: scaledCellHeight)
+            return CGSize(width: floor(scaledCellWidth), height: floor(scaledCellHeight))
         } else {
             return CGSize(width: 0, height: 0)
         }
@@ -75,7 +75,7 @@ extension UICollectionViewFixItemNumberLayoutDelegate {
             
             let actualCellHeight = actualCellWidth / aspectRatio
             
-            return CGSize(width: actualCellWidth, height: actualCellHeight)
+            return CGSize(width: floor(actualCellWidth), height: floor(actualCellHeight))
         } else {
             return CGSize(width: 0, height: 0)
         }
