@@ -9,9 +9,9 @@
 import Foundation
 import CocoaLumberjack
 
-class CustomDDLogFormatter: NSObject, DDLogFormatter {
+public final class CustomDDLogFormatter: NSObject, DDLogFormatter {
 
-    func format(message logMessage: DDLogMessage) -> String? {
+    public func format(message logMessage: DDLogMessage) -> String? {
         switch logMessage.flag {
         case .error:
             return String(format: "[DDLog] 💥 %@", logMessage.message)
