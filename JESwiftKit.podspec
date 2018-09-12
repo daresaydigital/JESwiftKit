@@ -49,9 +49,4 @@ Pod::Spec.new do |s|
       cs.dependency 'lottie-ios'
       cs.dependency 'SwifterSwift'
   end
-
-  s.subspec 'Logger' do |cs|
-      cs.source_files = 'Classes/Lumberjack'
-      cs.dependency 'CocoaLumberjack/Swift'
-  end
 end

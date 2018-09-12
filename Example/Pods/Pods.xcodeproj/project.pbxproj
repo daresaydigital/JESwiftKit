@@ -607,7 +607,6 @@
 		EF62F1E365AA368EA6177FE8D3C9A608 /* LOTMask.h in Headers */ = {isa = PBXBuildFile; fileRef = CA697F2E281F68882B0DCFFD410BAA67 /* LOTMask.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EF8548E0C37E8888D9DDC11ED89D3568 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F236B920961BDC6554D02D867DDA17D /* Predicate.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		EFC79719EDB69E1711CA75DD451242DF /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE5A05DBBFA90D7A486AEED6E0DB8C /* Closures.swift */; };
-		EFF59C25B027D4231C771FC8C3C6D1BD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3F38E5952F6DF2E23748CF819A2C3 /* Log.swift */; };
 		F09326E8F1C98057E9CD6C1812E2DAB6 /* NotificationCenter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25106E86D6897F77FE01F6507D470C0F /* NotificationCenter+Rx.swift */; };
 		F0AE68F2C71200AC2FAE01EE935F2A30 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F92810972A0FD8BAE437C0F243333C /* UITextFieldExtensions.swift */; };
 		F0E9F4422D1CE57D416C4B079D995293 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0BBF512F6AFFD89346B25FC502F369 /* UILabelExtensions.swift */; };
@@ -1436,7 +1435,6 @@
 		F7EF2D04A01A2A92EC0F5601466653C5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F86AC97699E7E7BC206A3E170A95BE34 /* CompositeDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositeDisposable.swift; path = RxSwift/Disposables/CompositeDisposable.swift; sourceTree = "<group>"; };
 		F87865D4181824ED86F328E0EB71982E /* Just.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Just.swift; path = RxSwift/Observables/Just.swift; sourceTree = "<group>"; };
-		F8A3F38E5952F6DF2E23748CF819A2C3 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F8B28B45925A72F82B4A9BC028E79E1D /* InfiniteSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfiniteSequence.swift; path = Platform/DataStructures/InfiniteSequence.swift; sourceTree = "<group>"; };
 		F8DBB5110400D6049276FA3ABCDD5EA7 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
 		F95BAC5818B280B7F55388217D6DFFB7 /* URLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLExtensions.swift; path = Sources/Extensions/Foundation/URLExtensions.swift; sourceTree = "<group>"; };
@@ -1619,7 +1617,6 @@
 			children = (
 				54EE7E61770956C00F9327F6C8EA20A2 /* Core */,
 				3B08408AF30A6FE30C8FC83753F62047 /* Lottie */,
-				43D6612B7FB0B9F07BE39F4E9194DBE0 /* Lumberjack */,
 				85BD6D36051123ED70E69BE5F1E9F437 /* Pod */,
 				E78E5F73E3A961A968D0DBA43DD48F1B /* RxExtensions */,
 				51BA963427B0149513F52725E9C8B95F /* Support Files */,
@@ -1926,15 +1923,6 @@
 				077DD7EF7986586E28726FC9A58A3A40 /* Support Files */,
 			);
 			path = RxCocoa;
-			sourceTree = "<group>";
-		};
-		43D6612B7FB0B9F07BE39F4E9194DBE0 /* Lumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				F8A3F38E5952F6DF2E23748CF819A2C3 /* Log.swift */,
-			);
-			name = Lumberjack;
-			path = JESwiftKit/Classes/Lumberjack;
 			sourceTree = "<group>";
 		};
 		510370A2E181C96D33057E4CC0BBBA40 /* CoreLocation */ = {
@@ -3233,7 +3221,6 @@
 				8662AE5F5EE42D0A185881E058A7FD1C /* DateFormatter+Extensions.swift in Sources */,
 				EED065D282F0CE9F034B2F70386C4806 /* GradientView.swift in Sources */,
 				251523313744B530F0080591A487759F /* JESwiftKit-dummy.m in Sources */,
-				EFF59C25B027D4231C771FC8C3C6D1BD /* Log.swift in Sources */,
 				381756693F40C69D7932CA12650664CB /* LOTAnimationContainer.swift in Sources */,
 				9E181DC6A86CFCBE6D01E2F40A604996 /* NetworkActivityIndicator.swift in Sources */,
 				B48710441C8C6FF74336B0ADBD2A52A2 /* Optional+Extensions.swift in Sources */,
