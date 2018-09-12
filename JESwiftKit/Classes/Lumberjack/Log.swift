@@ -30,3 +30,20 @@ public final class CustomDDLogFormatter: NSObject, DDLogFormatter {
 public func DDLogError(_ message: String, error: Error?) {
     DDLogError(String(format: "%@ Error: %@", message, error.debugDescription))
 }
+
+// Workaround for Swift
+// https://github.com/CocoaLumberjack/CocoaLumberjack/issues/643#issuecomment-156570032
+extension DDAbstractLogger {
+    
+    func swiftCompatMessage(message logMessage: DDLogMessage) -> String? {
+        var logMsg: String? = logMessage.message
+        
+        if let ivar = class_getInstanceVariable(object_getClass(self), "_logFormatter"),
+            let formatter = object_getIvar(self, ivar) as? DDLogFormatter {
+            logMsg = formatter.format(message: logMessage)
+        }
+        
+        return logMsg
+        
+    }
+}
