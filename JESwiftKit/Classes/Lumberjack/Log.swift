@@ -35,7 +35,7 @@ public func DDLogError(_ message: String, error: Error?) {
 // https://github.com/CocoaLumberjack/CocoaLumberjack/issues/643#issuecomment-156570032
 extension DDAbstractLogger {
     
-    func swiftCompatMessage(message logMessage: DDLogMessage) -> String? {
+    public func swiftCompatMessage(message logMessage: DDLogMessage) -> String? {
         var logMsg: String? = logMessage.message
         
         if let ivar = class_getInstanceVariable(object_getClass(self), "_logFormatter"),
