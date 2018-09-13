@@ -17,6 +17,9 @@ public class LOTAnimationContainer: UIView {
     private var initialLayout = false
     public private(set) var lottieView: LOTAnimationView?
     private var _animationName: String?
+    
+    private var shouldBePlaying: Bool = false
+    
 
     @IBInspectable public var animationName: String? {
         didSet {
@@ -62,13 +65,18 @@ public class LOTAnimationContainer: UIView {
             }
             initialLayout = true
 
+            NotificationCenter.default.addObserver(self, selector: #selector(prepareForBackground), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(resumePlay), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         }
     }
     
+    @objc public func prepareForBackground() {
+        self.shouldBePlaying = self.lottieView?.isAnimationPlaying ?? false
+    }
+    
     @objc public func resumePlay() {
         if let animView = self.lottieView {
-            if !animView.isAnimationPlaying {
+            if !animView.isAnimationPlaying && self.shouldBePlaying {
                 animView.play()
             }
         }
