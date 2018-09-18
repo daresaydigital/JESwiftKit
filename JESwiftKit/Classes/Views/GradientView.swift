@@ -1,20 +1,20 @@
 import UIKit
 
 @IBDesignable
-public class GradientView: UIView {
+open class GradientView: UIView {
     
-    public enum Orientation: String {
+    public enum GradientOrientation: String {
         case horizontal, vertical, diagonalLeft, diagonalRight
     }
     
-    @IBInspectable public var orientation: String = "diagonalLeft"
-    @IBInspectable public var color1: UIColor?
-    @IBInspectable public var color2: UIColor?
+    @IBInspectable public dynamic var orientation: String = "diagonalLeft"
+    @IBInspectable public dynamic var color1: UIColor?
+    @IBInspectable public dynamic var color2: UIColor?
     
-    private var orientationEnum: Orientation { return Orientation(rawValue: self.orientation) ?? .horizontal }
+    private var orientationEnum: GradientOrientation { return GradientOrientation(rawValue: self.orientation) ?? .horizontal }
     private var colors: [UIColor] { return color1.flatMap { (col1) in color2.map { (col2) in return [col1, col2] }} ?? []}
 
-    override public func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
