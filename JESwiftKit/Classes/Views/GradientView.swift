@@ -11,7 +11,7 @@ open class GradientView: UIView {
     @IBInspectable public dynamic var color1: UIColor?
     @IBInspectable public dynamic var color2: UIColor?
     
-    private var orientationEnum: Orientation { return GradientOrientation(rawValue: self.orientation) ?? .horizontal }
+    private var orientationEnum: Orientation { return Orientation(rawValue: self.orientation) ?? .horizontal }
     private var colors: [UIColor] { return color1.flatMap { (col1) in color2.map { (col2) in return [col1, col2] }} ?? []}
 
     override open func draw(_ rect: CGRect) {
