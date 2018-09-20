@@ -26,7 +26,9 @@ extension UICollectionViewGrowToFitFlowLayoutDelegate {
             let minimumItemWidth = self.collectionView(collectionView, layout: flowLayout, minimumItemWidthIn: section)
             let aspectRatio = self.collectionView(collectionView, layout: flowLayout, aspectRatioIn: section)
 
-            let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing
+            let sectionInsets: UIEdgeInsets = self.collectionView?(collectionView, layout: collectionViewLayout, insetForSectionAt: section) ?? UIEdgeInsets.zero
+            
+            let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing - sectionInsets.left - sectionInsets.right
             
             let cellWidthWithSpacing = flowLayout.minimumInteritemSpacing + minimumItemWidth
             let numberOfCells = floor(usableWidth / cellWidthWithSpacing)
@@ -65,7 +67,9 @@ extension UICollectionViewFixItemNumberLayoutDelegate {
             let maxItemWidth = self.collectionView(collectionView, layout: flowLayout, maximumItemWidthIn: section)
             let aspectRatio = self.collectionView(collectionView, layout: flowLayout, aspectRatioIn: section)
             
-            let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing
+            let sectionInsets: UIEdgeInsets = self.collectionView?(collectionView, layout: collectionViewLayout, insetForSectionAt: section) ?? UIEdgeInsets.zero
+            
+            let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing - sectionInsets.left - sectionInsets.right
             
             // now that we know how many can fit, scale up what we have
             let cellsPerRow = self.collectionView(collectionView, layout: flowLayout, cellsPerRowIn: section)
