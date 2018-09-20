@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol OptionalType: ExpressibleByNilLiteral { }
+public protocol OptionalType: ExpressibleByNilLiteral { }
 
 // Optional already has an ExpressibleByNilLiteral conformance
 // so we just adopt the protocol
 extension Optional: OptionalType { }
-extension Optional where Wrapped: OptionalType {
+public extension Optional where Wrapped: OptionalType {
     
     /// Flatten out double optionals
-    func flatten() -> Wrapped {
+    public func flatten() -> Wrapped {
         switch self {
         case let .some(value):
             return value
