@@ -26,7 +26,7 @@ extension UICollectionViewGrowToFitFlowLayoutDelegate {
             let minimumItemWidth = self.collectionView(collectionView, layout: flowLayout, minimumItemWidthIn: section)
             let aspectRatio = self.collectionView(collectionView, layout: flowLayout, aspectRatioIn: section)
 
-            let sectionInsets: UIEdgeInsets = self.collectionView?(collectionView, layout: collectionViewLayout, insetForSectionAt: section) ?? UIEdgeInsets.zero
+            let sectionInsets: UIEdgeInsets = flowLayout.sectionInset
             
             let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing - sectionInsets.left - sectionInsets.right
             
@@ -67,7 +67,7 @@ extension UICollectionViewFixItemNumberLayoutDelegate {
             let maxItemWidth = self.collectionView(collectionView, layout: flowLayout, maximumItemWidthIn: section)
             let aspectRatio = self.collectionView(collectionView, layout: flowLayout, aspectRatioIn: section)
             
-            let sectionInsets: UIEdgeInsets = self.collectionView?(collectionView, layout: collectionViewLayout, insetForSectionAt: section) ?? UIEdgeInsets.zero
+            let sectionInsets: UIEdgeInsets = flowLayout.sectionInset
             
             let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing - sectionInsets.left - sectionInsets.right
             
