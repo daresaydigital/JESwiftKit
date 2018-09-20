@@ -69,11 +69,14 @@ extension UICollectionViewFixItemNumberLayoutDelegate {
             
             let sectionInsets: UIEdgeInsets = flowLayout.sectionInset
             
-            let usableWidth = collectionView.frame.size.width - flowLayout.minimumInteritemSpacing - sectionInsets.left - sectionInsets.right
+            let collectionWidth = collectionView.frame.size.width - sectionInsets.left - sectionInsets.right
             
             // now that we know how many can fit, scale up what we have
             let cellsPerRow = self.collectionView(collectionView, layout: flowLayout, cellsPerRowIn: section)
-            let scaledCellWidth = (usableWidth / CGFloat(cellsPerRow)) - flowLayout.minimumInteritemSpacing
+            
+            let usableWidth = collectionWidth - flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+            
+            let scaledCellWidth = (usableWidth / CGFloat(cellsPerRow))
             
             let actualCellWidth = min(scaledCellWidth, maxItemWidth)
             
@@ -108,7 +111,7 @@ extension UICollectionViewFitFlowLayoutDelegate {
     public func cellsPerRow(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, section: Int) -> Int {
         var numberOfCells = 0
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            let usableWidth = collectionView.frame.size.width
+            let usableWidth = collectionView.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
             let cellSize = self.cellSize(collectionView, layout: flowLayout, section: section).width
 
             var runningCellSizeTotal: CGFloat = 0
