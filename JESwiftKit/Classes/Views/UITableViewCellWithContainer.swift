@@ -17,9 +17,9 @@ public class UITableViewCellWithContainer: UITableViewCell {
     
     override public func prepareForReuse() {
         if let controller = self.embeddedController {
-            controller.willMove(toParentViewController: nil)
+            controller.willMove(toParent: nil)
             controller.view.removeFromSuperview()
-            controller.removeFromParentViewController()
+            controller.removeFromParent()
         }
     }
     
@@ -37,14 +37,14 @@ public class UITableViewCellWithContainer: UITableViewCell {
         self.embeddedController = embeddedController
         
         // Add the page view controller into the container view.
-        parentViewController.addChildViewController(embeddedController)
+        parentViewController.addChild(embeddedController)
         
         self.embeddedController?.view.translatesAutoresizingMaskIntoConstraints = false
         self.containerView?.translatesAutoresizingMaskIntoConstraints = false
         self.containerView?.addSubview(embeddedController.view)
         embeddedController.view.fillToSuperview()
         
-        self.embeddedController?.didMove(toParentViewController: parentViewController)
+        self.embeddedController?.didMove(toParent: parentViewController)
 
     }
 }

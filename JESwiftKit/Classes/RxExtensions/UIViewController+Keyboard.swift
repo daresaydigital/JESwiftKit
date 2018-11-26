@@ -17,19 +17,19 @@ extension UIViewController {
     /// Call this in your viewDidLoad()
     public func enableKeyboardAdjustmentFor(_ constraint: NSLayoutConstraint, disposedBy bag: DisposeBag, padding: CGFloat = 8.0) {
         
-        NotificationCenter.default.rx.notification(NSNotification.Name.UIKeyboardWillChangeFrame).subscribe(onNext: { [weak self] (note) in
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillChangeFrameNotification).subscribe(onNext: { [weak self] (note) in
             if let strongSelf = self {
                 strongSelf.updateKeyboardFrame(note, constraint: constraint, padding: padding)
             }
         }).disposed(by: bag)
         
-        NotificationCenter.default.rx.notification(NSNotification.Name.UIKeyboardWillHide).subscribe(onNext: { [weak self] (note) in
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification).subscribe(onNext: { [weak self] (note) in
             if let strongSelf = self {
                 strongSelf.updateKeyboardFrame(note, constraint: constraint, padding: padding)
             }
         }).disposed(by: bag)
         
-        NotificationCenter.default.rx.notification(NSNotification.Name.UIKeyboardWillShow).subscribe(onNext: { [weak self] (note) in
+        NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification).subscribe(onNext: { [weak self] (note) in
             if let strongSelf = self {
                 strongSelf.updateKeyboardFrame(note, constraint: constraint, padding: padding)
             }
@@ -42,9 +42,9 @@ extension UIViewController {
     /// Set the constraint to priority 1000
     private func updateKeyboardFrame(_ notification: Notification, constraint: NSLayoutConstraint, padding: CGFloat) {
         
-        guard let newKeyboardRect = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
-            let keyboardAnimationDuration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double,
-            let keyboardAnimationCurve = ((notification.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Int).flatMap { UIViewAnimationCurve(rawValue: $0) }) else {
+        guard let newKeyboardRect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+            let keyboardAnimationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
+            let keyboardAnimationCurve = ((notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int).flatMap { UIView.AnimationCurve(rawValue: $0) }) else {
                 return
         }
         

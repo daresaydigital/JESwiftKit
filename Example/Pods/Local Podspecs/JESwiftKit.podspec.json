@@ -19,15 +19,21 @@
     "ios": "9.0"
   },
   "source_files": "JESwiftKit/Classes/**/*",
+  "default_subspecs": [
+    "Core",
+    "Views"
+  ],
   "frameworks": "UIKit",
+  "swift_version": "4.2",
   "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Classes/Core"
+    },
     {
       "name": "Views",
       "source_files": "Classes/Views",
       "dependencies": {
-        "JESwiftKit/Core": [
-
-        ],
         "SwifterSwift": [
 
         ]
@@ -37,9 +43,6 @@
       "name": "Rx",
       "source_files": "Classes/Rx",
       "dependencies": {
-        "JESwiftKit/Core": [
-
-        ],
         "RxSwift": [
 
         ],
@@ -59,19 +62,6 @@
 
         ]
       }
-    },
-    {
-      "name": "Logger",
-      "source_files": "Classes/Lumberjack",
-      "dependencies": {
-        "CocoaLumberjack/Swift": [
-
-        ]
-      }
-    },
-    {
-      "name": "Core",
-      "source_files": "Classes/Core"
     }
   ]
 }
