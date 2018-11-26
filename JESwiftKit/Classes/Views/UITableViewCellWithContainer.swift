@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwifterSwift
 
-public class UITableViewCellWithContainer: UITableViewCell {
+open class UITableViewCellWithContainer: UITableViewCell {
     
     public var embeddedController: UIViewController?
     @IBOutlet weak public var containerView: UIView?
