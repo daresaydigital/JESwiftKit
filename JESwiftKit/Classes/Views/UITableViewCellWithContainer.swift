@@ -15,7 +15,7 @@ open class UITableViewCellWithContainer: UITableViewCell {
     public var embeddedController: UIViewController?
     @IBOutlet weak public var containerView: UIView?
     
-    override public func prepareForReuse() {
+    override open func prepareForReuse() {
         if let controller = self.embeddedController {
             controller.willMove(toParent: nil)
             controller.view.removeFromSuperview()
