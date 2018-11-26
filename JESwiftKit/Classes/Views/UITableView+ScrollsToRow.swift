@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
-    func scrollToTopRow(animated: Bool) {
+    public func scrollToTopRow(animated: Bool) {
         let zeroIndex = IndexPath(item: 0, section: 0)
         if self.numberOfSections > 0 && self.numberOfRows(inSection: zeroIndex.section) > 0 {
             self.scrollToRow(at: zeroIndex, at: .top, animated: animated)
         }
     }
     
-    func scrollToBottomRow(animated: Bool) {
+    public func scrollToBottomRow(animated: Bool) {
         let sectionCount = self.numberOfSections
         if sectionCount > 0 {
             let rowCount = self.numberOfRows(inSection: sectionCount - 1)
