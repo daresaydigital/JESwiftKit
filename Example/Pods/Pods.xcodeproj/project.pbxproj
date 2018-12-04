@@ -221,6 +221,8 @@
 		5D16C7761927D9385015E89934A87B04 /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFD4997EC4E323ED3241FF1ED4B4594 /* RecursiveLock.swift */; };
 		5D24BDE8DA279DDB32FE827EDA52EBB1 /* UIBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 6979795ADC4A12BD61715EC7C30256B1 /* UIBezierPath.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5D2FDA8644175D0B5CC61C0EB20855F8 /* DisposeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA477F6EDC722A356A5E85C420EC9B5 /* DisposeBase.swift */; };
+		5D6CB11521B70EF000B876E7 /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6CB11121B70EF000B876E7 /* ReplaceSegue.swift */; };
+		5D6CB11621B70EF000B876E7 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6CB11221B70EF000B876E7 /* DismissSegue.swift */; };
 		5DE5D144F2C20281D996A359556ABAE8 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D64C8A5A84AA3BACD90A05AD407EE4 /* Filter.swift */; };
 		5DF7C95B9F5B632A6CF743D3054F76A2 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD13A2D50C6F0E23167572C4009A6F /* Delay.swift */; };
 		5E1B494C5306A7517153121C871BDDEF /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D338D5DE221E5100C7E89B8B4E65B /* Just.swift */; };
@@ -1027,6 +1029,8 @@
 		5CAE5FC7AB95AE32493539A64E4591FE /* Scan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = RxSwift/Observables/Scan.swift; sourceTree = "<group>"; };
 		5D2A7C03156ADBE1EABEEBE3FB04159F /* ControlEvent+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlEvent+Driver.swift"; path = "RxCocoa/Traits/Driver/ControlEvent+Driver.swift"; sourceTree = "<group>"; };
 		5D3045D449BD9C743EBF5E64D86A6591 /* _RXDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXDelegateProxy.m; path = RxCocoa/Runtime/_RXDelegateProxy.m; sourceTree = "<group>"; };
+		5D6CB11121B70EF000B876E7 /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
+		5D6CB11221B70EF000B876E7 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		5D7D708CE5425EF5F3F8D8EAF54037B6 /* JESwiftKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JESwiftKit.xcconfig; sourceTree = "<group>"; };
 		5DC0F68D90963EA46090387C5B37D6EA /* lottie-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-umbrella.h"; sourceTree = "<group>"; };
 		5DE5C7FB678958B8A902625C37C01063 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
@@ -1783,6 +1787,7 @@
 		4D79CE29589767319B143C772685C4F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D6CB11021B70EF000B876E7 /* Segues */,
 				786F5C100FE9960E11742C45E34E332B /* CircularView.swift */,
 				9B3F79B15C76913F085F7D03A14B6CE1 /* GradientView.swift */,
 				D539F1A3B5B30BBD06F69C149592EE28 /* PopoverPresentation.swift */,
@@ -1795,6 +1800,15 @@
 			);
 			name = Views;
 			path = JESwiftKit/Classes/Views;
+			sourceTree = "<group>";
+		};
+		5D6CB11021B70EF000B876E7 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				5D6CB11121B70EF000B876E7 /* ReplaceSegue.swift */,
+				5D6CB11221B70EF000B876E7 /* DismissSegue.swift */,
+			);
+			path = Segues;
 			sourceTree = "<group>";
 		};
 		6F7413F6A023AD571DD75475EA09C584 /* lottie-ios */ = {
@@ -3575,11 +3589,13 @@
 				5A781478A309D10F9CB4151476EAB8A7 /* RxExtensions.swift in Sources */,
 				755790D2C071EDC3A3A32616E97D06EB /* SafeOptional.swift in Sources */,
 				65BF01CAE0ECBA13E51C63057E73B0E9 /* SequenceExtensions.swift in Sources */,
+				5D6CB11621B70EF000B876E7 /* DismissSegue.swift in Sources */,
 				6EBEB8E6DDE58D23C5C18020730B1C33 /* UIApplication+Testing.swift in Sources */,
 				2EA1E84D9748E45DDD95C1D968D969E5 /* UIButton+FontAppearance.swift in Sources */,
 				1D808FEDE8C9AE2C4D2E36BE28ADBE0E /* UICollectionViewDelegateFlowLayout+Fit.swift in Sources */,
 				F43774AC5F337C0159FBF91BC2D43D88 /* UIPageViewController+UIPageControl.swift in Sources */,
 				ECF06389573C245102729B9B72A60238 /* UITableView+ScrollsToRow.swift in Sources */,
+				5D6CB11521B70EF000B876E7 /* ReplaceSegue.swift in Sources */,
 				92A93CD3FFB73B91D99B800E08BC510E /* UITableViewCellWithContainer.swift in Sources */,
 				69EE6880112D4BC62030BC77F701CE66 /* UIViewController+Keyboard.swift in Sources */,
 				8F4678C196CB657B7923FE1EB74BB24D /* UIViewController+Modal.swift in Sources */,
